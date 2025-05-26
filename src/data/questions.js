@@ -5,7 +5,7 @@ const questions = [
     {
         id:1,
         question : "Abhiram prefers which food item?",
-        option : ["Chicken Fried Rice","Veg Fried Rice"],
+        options : ["Chicken Fried Rice","Veg Fried Rice"],
         answer : "Veg Fried Rice"
     },
     {
