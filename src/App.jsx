@@ -1,39 +1,19 @@
 import React,{ useState } from "react";
-import { useEffect } from "react";
-
 import questions from "./data/questions.js";
 import Question from "./components-temp/Question.jsx";
 const App = () => {
 
     const [current, setCurrent] = useState(0);
-    
-    useEffect(() => {
-      console.log("question_num updated",current)
-
-    }, [current])
-
     const [score, setScore] = useState(0);
-    useEffect(() => {
-      console.log("Score updated",score)
-
-    }, [score])
-    
-
-
     const [showResult, setShowResult] = useState(false);
-    useEffect(() => {
-      console.log("result updated",showResult)
-
-    }, [showResult])
-
+   
     const handle = (selectedIndex) => {
         if(questions[current].options[selectedIndex] == questions[current].answer)
         {
-            console.log("selectedIndex",selectedIndex)
+           
             setScore(prev => prev + 1 );
         }
-        console.log("selectedIndex",selectedIndex);
-        console.log("current",current);
+       
         const next = current + 1 
 
         if(next<questions.length)
@@ -50,11 +30,11 @@ const App = () => {
 
     if(showResult){
         content = (
-            <div>
-                <h1>
+            <div className="max-w-md mx-auto mt-20 p-6 bg-white rounded-xl shadow-lg text-center">
+                <h1 className="text-3xl font-bold text-green-600 mb-4">
                     Your Score
                     </h1>
-                <p>
+                <p className="text-xl text-gray-700">
                     {score}/{questions.length}
                     </p>
             </div>
@@ -79,6 +59,6 @@ const App = () => {
 
 
 
-return <div>{ content }</div>
+return <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">{ content }</div>
 }
 export default App;

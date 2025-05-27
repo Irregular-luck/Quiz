@@ -1,18 +1,19 @@
 import React from "react";
 
 
+
 const Question = ({data,onAnswer,questionNumber,totalQuestions}) => {
 
  return (
-    <div>
-    <h3>
+     <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
+   <h3 className="text-lg font-semibold text-grey-700 mb-2">
     Question{questionNumber} of {totalQuestions}
     </h3>
-    <p>
+     <p className="text-xl font-bold text-blue-800 mb-6">
     {data.question}
     </p>
     
-<div>
+<div className="space-y-4">
 
 {data.options.map((option,index) => (
     <button

@@ -51,7 +51,7 @@ const questions = [
         id:8,
         question:"Which district does CSD 2023-27 not have students from?",
         options:["Tvm","Kasargode","Pathanamthitta","Kollam"],
-        answer:"Kasargode"
+        answer:"Pathanamthitta"
 
     }
 
