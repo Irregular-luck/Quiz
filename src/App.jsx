@@ -31,7 +31,7 @@ const App = () => {
     if(showResult){
         content = (
             <div className="max-w-md mx-auto mt-20 p-6 bg-white rounded-xl shadow-lg text-center">
-                <h1 className="text-3xl font-bold text-green-600 mb-4">
+                <h1 className="text-3xl font-bold text-green-600 mb-4 animate-fade">
                     Your Score
                     </h1>
                 <p className="text-xl text-gray-700">
@@ -59,6 +59,7 @@ const App = () => {
 
 
 
-return <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">{ content }</div>
+return <div className="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
+    style={{ backgroundImage: "url('/imag3.1.jpg')" }}>{ content }</div>
 }
 export default App;

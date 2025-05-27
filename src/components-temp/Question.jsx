@@ -13,13 +13,13 @@ const Question = ({data,onAnswer,questionNumber,totalQuestions}) => {
     {data.question}
     </p>
     
-<div className="space-y-4">
+<div className="flex flex-col gap-4">
 
 {data.options.map((option,index) => (
     <button
         key={index}
         onClick={() => onAnswer(index)}
-        >
+        className="bg-gradient-to-r from-indigo-500 to-pink-600 text-white py-2 px-4 rounded-lg hover:scale-105 transform transition duration-300 shadow-md hover:shadow-lg">
         {option}
 
 
