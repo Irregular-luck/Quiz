@@ -30,7 +30,7 @@ const App = () => {
 
     if(showResult){
         content = (
-            <div className="max-w-md mx-auto mt-20 p-6 bg-white rounded-xl shadow-lg text-center">
+            <div className="max-w-xl mx-auto mt-20 p-6 bg-white rounded-xl shadow-lg text-center">
                 <h1 className="text-3xl font-bold text-green-600 mb-4 animate-fade">
                     Your Score
                     </h1>
