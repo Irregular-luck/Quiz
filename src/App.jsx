@@ -60,6 +60,6 @@ const App = () => {
 
 
 return <div className="min-h-screen bg-cover bg-center flex items-center justify-center px-4"
-    style={{ backgroundImage: "url('./imag3.1.jpg')" }}>{ content }</div>
+    style={{ backgroundImage: "url('./image.jpg')" }}>{ content }</div>
 }
 export default App;
