@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React,{ useEffect, useState } from "react";
 import questions from "./data/questions.js";
 import Question from "./components-temp/Question.jsx";
 const App = () => {
@@ -6,14 +6,26 @@ const App = () => {
     const [current, setCurrent] = useState(0);
     const [score, setScore] = useState(0);
     const [showResult, setShowResult] = useState(false);
-   
+    const [userAnswers, setUserAnswers] = useState([]);
+    useEffect(() => {
+      
+    console.log("the answers are "+userAnswers)
+      
+      }
+    , [userAnswers]);
+    
+    
+    
+    
     const handle = (selectedIndex) => {
-        if(questions[current].options[selectedIndex] == questions[current].answer)
+        let selectedAnswer = questions[current].options[selectedIndex];
+        if(selectedAnswer == questions[current].answer)
         {
            
-            setScore(prev => prev + 1 );
+            setScore(score+1);
         }
-       
+        setUserAnswers([...userAnswers,selectedAnswer]);
+     
         const next = current + 1 
 
         if(next<questions.length)
@@ -37,6 +49,42 @@ const App = () => {
                 <p className="text-xl text-gray-700">
                     {score}/{questions.length}
                     </p>
+                    <div>
+                        <h2 className="text-2xl font-mono">Question & Answers</h2>
+                        <div>
+                        
+
+                      
+                       {questions.map((q,index)=>{
+                        const userAnswer = userAnswers[index];
+                        const isCorrect = userAnswer === q.answer;
+                        return(
+                            <div key={index}>
+                    <p className="text-black">{index+1}.{q.question}</p>
+                    <p> 
+                          <span className="font-medium">Your Answer: </span>
+                <span className={isCorrect ? "text-green-800" : "text-red-800"}>
+                    {userAnswer}
+                </span>
+                    </p>
+
+                    {!isCorrect?
+                        (
+                            <p>
+                    <span className="font-medium text-gray-700">Correct Answer:</span>{' '}
+                    <span className="text-green-700">{q.answer}</span>
+                </p>
+                        ):null}
+                    
+                
+                  
+
+                        </div>
+                        )
+
+                       })}
+                        </div>
+                    </div>
             </div>
         );
 
