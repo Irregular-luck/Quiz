@@ -19,7 +19,7 @@ const Question = ({data,onAnswer,questionNumber,totalQuestions}) => {
     <button
         key={index}
         onClick={() => onAnswer(index)}
-        className="bg-gradient-to-r from-indigo-500 to-pink-600 text-white py-2 px-4 rounded-lg hover:scale-105 transform transition duration-300 shadow-md hover:shadow-lg">
+        className="bg-gradient-to-r from-green-500 to-green-300 text-white py-2 px-4 rounded-lg hover:scale-105 transform transition duration-300 shadow-md hover:shadow-lg">
         {option}
 
 
